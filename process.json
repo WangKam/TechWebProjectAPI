@@ -1,0 +1,36 @@
+{
+  "apps" : [{
+    "name"      : "tech_web",
+    "script"    : "./server.js",
+    "error_file": "./logs/err_main.log",
+    "out_file" : "./logs/out_main.log",
+    "instances" : 1,
+    "exec_mode" : "cluster",
+    "watch"     : true,
+    "ignore_watch" : ["node_modules", "public", "logs"],
+    "kill_timeout" : 3000,
+    "wait_ready": true,
+    "listen_timeout" : 3000,
+    "env_development": {
+      "NODE_ENV": "development",
+      "NODE_PORT":3333,
+
+      "DB_HOST":"127.0.0.1",
+      "DB_PORT": "3306",
+      "DB_USER": "root",
+      "DB_PASSWORD": "",
+      "DB_NAME": "tech_web",
+      "DB_DIALECT": "mysql"
+    },
+    "env_production" : {
+      "NODE_ENV": "production",
+      "NODE_PORT":3333,
+      "DB_HOST":"43.200.191.225",
+      "DB_PORT": "3306",
+      "DB_USER": "geminisoft",
+      "DB_PASSWORD": "Geminisoft@",
+      "DB_NAME": "tech_web",
+      "DB_DIALECT": "mysql"
+    }
+  }]
+}
